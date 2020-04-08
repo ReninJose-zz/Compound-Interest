@@ -3,7 +3,7 @@
 The following Program Calculates Compound interest of multiple items and
 stores it in a "Calculated.txt" file (Will be generated automatically).
 NOTE: For the program to run, the user will have to input the duration of
-inflation, and make a new file manually, which will be named "items.txt"
+inflation, and make a new file manually, which should be named "items.txt"
 where the intial content will be stored.
 Allowed Format: 'item_name' : 'float/decimal'
 */
@@ -49,7 +49,7 @@ func Read_file(fl_name *os.File) ([]string, []float64, int, error) {
 func calculate(result_cst []float64, cst []float64, count int, yrs int) ([]float64) {
 
   for i:=0 ; i<count ; i++ {
-    result_cst[i] = cst[i]*(math.Pow(1+(0.02/1), 1*float64(yrs)))
+    result_cst[i] = cst[i]*(math.Pow(1+(/*This number can be modified to change the rate*/0.02/1), 1*float64(yrs)))
   }
   return result_cst
 }
